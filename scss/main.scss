@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,400i,700');
+
+// ==========================================================================
+// Base styles: opinionated defaults
+// ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, Helvetica, Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 1.25em;
+  line-height: 1.5;
+}
+
+///
+// Remove text-shadow in selection highlight:
+// https://twitter.com/miketaylr/status/12228805301
+//
+// Vendor-prefixed and regular ::selection selectors cannot be combined:
+// https://stackoverflow.com/a/16982510/7133471
+//
+// Customize the background color to match your design.
+///
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+// A better looking default horizontal rule
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+///
+// Remove the gap between audio, canvas, iframes,
+// images, videos and the bottom of their containers:
+// https://github.com/h5bp/html5-boilerplate/issues/440
+///
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+// Remove default fieldset styles.
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Roboto Slab", Georgia, 'Times New Roman', Times, serif;
+}
+
+a {
+  color: #0074aa;
+  text-decoration: none;
+  border-bottom: 0.125rem solid #0074aa50;
+
+  &:visited {
+    color: #0e45bb;
+    border-bottom-color: #0e45bb50;
+  }
+}
+
+ul {
+  margin: 0 0 2em;
+  padding: 0 0 0 1.5em;
+}
+
+li {
+  margin: 0 0 0.75em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.page {
+  max-width: 51rem;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+}
+
+.page__title {
+  margin: 0;
+}
+
+.aka {
+  font-size: 0.75em;
+}
+
+.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-icons__icon-wrapper {
+  margin: 0 1em 1.5em 0;
+  padding: 0;
+}
+
+.social-icons__icon {
+  display: block;
+  width: 2.25em;
+  height: 2.25em;
+  border: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  &--github {
+    background-image: url(../images/Github.svg);
+  }
+
+  &--codepen {
+    background-image: url(../images/Codepen.svg);
+  }
+
+  &--linkedin {
+    background-image: url(../images/Linkedin.svg);
+  }
+
+  &--twitter {
+    background-image: url(../images/Twitter.svg);
+  }
+
+}
+
+.portrait {
+  margin: 0 auto 1.5em;
+  max-width: 20em;
+}
+
+@media (min-width: 41.25em) {
+  .portrait {
+    float: right;
+    width: 50%;
+    margin-right: -2em;
+    padding: 0 0 0 2em;
+  }
+}
+
+.unem {
+  color: #888;
+  font-size: 0.75em;
+}
+
+.space-dude {
+  padding: 2em 2em 4em;
+  background: linear-gradient(to bottom, #4ec5ff, #005b88);
+  text-align: center;
+}
+
+///
+// Hide only visually, but have it available for screen readers:
+// https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+//
+// 1. For long content, line feeds are not interpreted as spaces and small width
+//  causes content to wrap 1 word per line:
+//  https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+///
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
+}
+
+///
+// Extends the .sr-only class to allow the element
+// to be focusable when navigated to via the keyboard:
+// https://www.drupal.org/node/897638
+///
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  -webkit-clip-path: none;
+  clip-path: none;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
+}
+
+// Hide visually and from screen readers, but maintain layout
+.invisible {
+  visibility: hidden;
+}
+
+//
+// Clearfix: contain floats
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//  `contenteditable` attribute is included anywhere else in the document.
+//  Otherwise it causes space to appear at the top and bottom of elements
+//  that receive the `clearfix` class.
+// 2. The use of `table` rather than `block` is only necessary if using
+//  `:before` to contain the top-margins of child elements.
+///
+
+.clearfix:before,
+.clearfix:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
