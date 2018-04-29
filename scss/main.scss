@@ -4,15 +4,23 @@
 // Base styles: opinionated defaults
 // ========================================================================== */
 
+$font-sans: Roboto, Helvetica, Arial, Helvetica, sans-serif;
+$font-serif: "Roboto Slab", Georgia, 'Times New Roman', Times, serif;
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: Roboto, Helvetica, Arial, Helvetica, sans-serif;
+  font-family: $font-sans;
   color: #333;
-  font-size: 1.25em;
   line-height: 1.5;
+}
+
+@media (min-width: 30em) {
+  body {
+  font-size: 1.25em;
+  }
 }
 
 ///
@@ -70,7 +78,7 @@ fieldset {
 h1,
 h2,
 h3 {
-  font-family: "Roboto Slab", Georgia, 'Times New Roman', Times, serif;
+  font-family: $font-serif;
 }
 
 a {
@@ -84,27 +92,78 @@ a {
   }
 }
 
+h2,
+h3 {
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
 ul {
   margin: 0 0 2em;
   padding: 0 0 0 1.5em;
 }
 
 li {
-  margin: 0 0 0.75em;
+  margin: 0 0 1em;
 }
 
 img {
   max-width: 100%;
 }
 
+ruby {
+  ruby-position: under;
+}
+
+rt {
+  font-family: $font-sans;
+  font-weight: normal;
+  font-size: 0.9375rem;
+}
+
 .page {
   max-width: 51rem;
   margin: 0 auto;
-  padding: 5rem 3rem;
+  padding: 4rem 2rem;
+}
+
+@media (min-width: 30em) {
+  .page {
+    padding: 5rem 3rem;
+  }
+}
+
+@supports (display: grid) {
+  @media (min-width: 42em) {
+    .page__header {
+      display: grid;
+      grid-template: 1fr / 1fr auto;
+      grid-template-areas:
+        "title ."
+        "description social";
+    }
+  }
+}
+
+.page__title-wrapper {
+  grid-area: title;
+  padding: 0 0 1.5em;
 }
 
 .page__title {
   margin: 0;
+}
+
+.my-name {
+  background: #ffdf6f70;
+}
+
+.page__header-copy {
+  grid-area: description;
+  margin: 0 0 2em;
 }
 
 .aka {
@@ -114,14 +173,31 @@ img {
 .social-icons {
   display: flex;
   flex-wrap: wrap;
+  grid-area: social;
+  justify-self: end;
   list-style: none;
-  margin: 0;
+  margin: 0 0 1em;
   padding: 0;
 }
 
+@media (min-width: 42em) {
+  .social-icons {
+    flex-direction: column;
+    width: 4.25em;
+    margin: 0;
+    padding: 0 0 0 2em;
+  }
+}
+
 .social-icons__icon-wrapper {
-  margin: 0 1em 1.5em 0;
+  margin: 0 1em 1em 0;
   padding: 0;
+}
+
+@media (min-width: 42em) {
+  .social-icons__icon-wrapper {
+    margin: 0 0 1em 0;
+  }
 }
 
 .social-icons__icon {
@@ -161,12 +237,33 @@ img {
   max-width: 20em;
 }
 
-@media (min-width: 41.25em) {
+@media (min-width: 42em) {
   .portrait {
     float: right;
     width: 50%;
-    margin-right: -2em;
     padding: 0 0 0 2em;
+  }
+}
+
+.slides,
+.articles {
+  h3 {
+    margin: 0 0 0.5em;
+  }
+
+  li {
+    position: relative;
+    list-style: none;
+
+    &:before {
+      content: '✶';
+      position: absolute;
+      top: 0.2em;
+      left: -1.25em;
+      display: block;
+      color: #daa900;
+      transform: rotate(20deg);
+    }
   }
 }
 
@@ -176,11 +273,103 @@ img {
 }
 
 .space-dude {
-  padding: 2em 2em 4em;
-  background: linear-gradient(to bottom, #4ec5ff, #005b88);
+  $image-width: 37.75rem;
+
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 5em 2em 4em;
+  background: linear-gradient(to bottom,
+    #15a1e7,
+    #004669);
   text-align: center;
+
+  img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: $image-width;
+  }
 }
 
+.space-dude__inner-wrapper {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -2em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(190deg,
+      rgba(200, 0, 50, 0.4),
+      rgba(150, 0, 50, 0) 60%);
+    border-radius: 5%;
+  }
+}
+
+.space-dude__antenna-nonsense {
+  position: absolute;
+  top: 6.5%;
+  right: 31%;
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  transform: rotate(58deg);
+  transform-origin: right top;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2em;
+    height: 2em;
+    background: radial-gradient(
+      transparent 35%,
+      #e22 35%,
+      #e22 45%,
+      transparent 45%,
+      transparent 60%,
+      #e22 60%,
+      #e22 70%,
+      transparent 70%
+    );
+    transform: translate(50%, -50%);
+    opacity: 0.1;
+    animation: 1.5s infinite emit;
+    animation-timing-function: linear;
+  }
+}
+
+.space-dude__antenna-nonsense--2 {
+  transform: rotate(-120deg);
+}
+@keyframes emit {
+  0% {
+    transform: translate(50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(50%, -50%) scale(1.45);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(50%, -50%) scale(1.7);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(50%, -50%) scale(1.95);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(50%, -50%) scale(2.2);
+    opacity: 0;
+  }
+}
 ///
 // Hide only visually, but have it available for screen readers:
 // https://snook.ca/archives/html_and_css/hiding-content-for-accessibility

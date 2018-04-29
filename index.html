@@ -18,10 +18,15 @@
 
 <main class="page">
   <article itemscope itemtype="http://schema.org/Person">
-    <header>
-      <h1 class="page__title">Hi, I'm <span itemprop="name">Wes Ruvalcaba</span>.</h1>
-      <div class="aka">(aka <span itemprop="alternateName">wesruv</span>)</div>
-      <p itemprop="description">I like to teach, mentor, and speak whenever I get the chance. During the day I'm a <span itemprop="jobTitle">Senior Front-end Developer</span> at <a href="https://www.lullabot.com" itemprop="memberOf">Lullabot</a>, where I do a lot of HTML, CSS, JS, Drupal, sometimes React, Vue.js and whatever else.</p>
+    <header class="page__header">
+      <div class="page__title-wrapper">
+        <h1 class="page__title">Hi, I'm <span class="my-name" itemprop="name">Wes&nbsp;<ruby class="last-name">Ruvalcaba <rt>Roov-al-cah-bah</rt></ruby></span>.</h1>
+        <div class="aka">(aka <span itemprop="alternateName">wesruv</span>)</div>
+      </div>
+      <div itemprop="description" class="page__header-copy">
+        <p>I like to teach, mentor, and speak whenever I get the chance. During the day I'm a <span itemprop="jobTitle">Senior Front-end Developer</span> at <a href="https://www.lullabot.com" itemprop="memberOf">Lullabot</a>, where I do a lot of HTML, CSS, JS, Drupal, sometimes React, Vue.js and whatever else.</p>
+        <p>I've talked at 4 DrupalCons, been a teacher at Columbus College of Art &amp; Design for 3 years, spoken at a number of camps, and mentored 10+ individuals partnering with groups like <a href="https://www.girldevelopit.com/chapters/columbus">Columbus Girl Develop It</a> and <a href="https://www.meetup.com/Columbus-Web-Group">Columbus Web Group</a>.</p>
+      </div>
       <ul class="social-icons">
         <li class="social-icons__icon-wrapper">
           <a href="https://codepen.io/wesruv" title="Codepen" class="social-icons__icon social-icons__icon--codepen">
@@ -45,54 +50,53 @@
         </li>
       </ul>
     </header>
-
-    <h2>Slides from my talks:</h2>
-    <ul>
-      <li>
-        <a href="https://wesruv.github.io/reveal.js/">Intermediate to Advanced CSS for Practical Peoples</a> <span class="unem">(2018)</span><br>
-        Intermediate CSS training focusing on they why of CSS and not the technical details.
-      </li>
-      <li>
-        <a href="https://wesruv.github.io/reveal.js/designing-for-decoupled.html">Designing for Decoupled</a> <span class="unem">(2018)</span><br>
-        Interactive design tips and gotchas for projects based in React/Vue.js/Angular.
-      </li>
-      <li>
-        <a href="https://wesruv.github.io/reveal.js/vr.html">Web VR - What, Why and How</a> <span class="unem">(2017)</span><br>
-        An introduction to WebVR and how to produce some of your own with AFrame.
-      </li>
-      <li><a href="http://backdrop-ops.github.io/slides/intro.en.html/">Intro to Backdrop CMS</a> <span class="unem">(2016)</span><br>
-        I gave a versions of this (it's a shared repository) in 2016 and 2017.
-      </li>
-      <li>
-        <a href="https://wesruv.github.io/reveal.js/d8.html">Drupal 8 Theming Crash Course</a> <span class="unem">(2015)</span><br>
-        This is really old, check links in slides for up to date information.
-      </li>
-    </ul>
     <div class="portrait">
       <img src="images/me.jpg" alt="A picture of me, being smiley and handsome" itemprop="image" />
     </div>
-    <p>I'm a core contributor to <a href="https://backdropcms.org/">Backdrop CMS</a>, and a member of their project management committee.</p>
 
-    <p>I've spoken at:</p>
-    <ul>
-      <li>DrupalCon Los Angeles</li>
-      <li>DrupalCon Baltimore</li>
-      <li>DrupalCon Vienna</li>
-      <li>DrupalCon Nashville</li>
-      <li>Many small events and camps, including BAD Camp, MidCamp, Drupal Camp Iceland, Drupal Camp London</li>
+    <h2>Slides from my talks:</h2>
+    <ul class="slides">
+      <li>
+        <h3><a href="https://wesruv.github.io/reveal.js/">Intermediate to Advanced CSS for Practical Peoples</a> <span class="unem">(2018)</span></h3>
+        Intermediate CSS training focusing on they why of CSS and not the technical details.
+      </li>
+      <li>
+        <h3><a href="https://wesruv.github.io/reveal.js/designing-for-decoupled.html">Designing for Decoupled</a> <span class="unem">(2018)</span></h3>
+        Interactive design tips and gotchas for projects based in React/Vue.js/Angular.
+      </li>
+      <li>
+        <h3><a href="https://wesruv.github.io/reveal.js/vr.html">Web VR - What, Why and How</a> <span class="unem">(2017)</span></h3>
+        An introduction to WebVR and how to produce some of your own with AFrame.
+      </li>
+      <li><h3><a href="http://backdrop-ops.github.io/slides/intro.en.html/">Intro to Backdrop CMS</a> <span class="unem">(2016)</span></h3>
+        I gave a versions of this (it's a shared repository) in 2016 and 2017.
+      </li>
+      <li>
+        <h3><a href="https://wesruv.github.io/reveal.js/d8.html">Drupal 8 Theming Crash Course</a> <span class="unem">(2015)</span></h3>
+        This is really old, check links in slides for up to date information.
+      </li>
     </ul>
 
-    <p>I've taught and mentored:</p>
-    <ul>
-      <li>3 classes at Columbus College of Art &amp; Design</li>
-      <li>Mentored 10+ individuals, partnering groups like <a href="https://www.girldevelopit.com/chapters/columbus">Columbus Girl Develop It</a> and <a href="https://www.meetup.com/Columbus-Web-Group">Columbus Web Group</a>.</li>
-      <li>Created and taught demos and workshops for clients</li>
+    <h3>Articles I've written:</h3>
+    <ul class="articles">
+      <li>
+        <h3><a href="https://www.lullabot.com/articles/scaling-css-components-with-bem-rems-ems">Scaling CSS Components with BEM, REMs, & EMs</a></h3>
+        Using REMs and EMs and CSS to scope components and create completely scalable UI elements.
+      </li>
+      <li>
+        <h3><a href="https://www.lullabot.com/articles/bem-atomic-design-a-css-architecture-worth-loving">BEM & Atomic Design: A CSS Architecture Worth Loving</a></h3>
+        Taking some notes from Atomic Design that can help large projects create a front end artchitecture that can help make your team's life easier.
+      </li>
     </ul>
   </article>
 
 </main>
 <div class="space-dude">
-  <img src="images/space-dude.webp" alt="Space man transmitting from the moon" />
+  <div class="space-dude__inner-wrapper">
+    <div class="space-dude__antenna-nonsense"></div>
+    <div class="space-dude__antenna-nonsense space-dude__antenna-nonsense--2"></div>
+    <img src="images/space-dude.png" alt="Space man transmitting from the moon" />
+  </div>
 </div>
 
   <!-- <script src="js/vendor/modernizr-3.5.0.min.js"></script>
@@ -101,9 +105,9 @@
   <!-- <script src="js/main.js"></script> -->
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
+  <!-- <script>
     window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
     ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-  </script>
+  </script> -->
 </body>
 </html>
