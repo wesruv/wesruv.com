@@ -13,7 +13,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          'css/main.css': 'scss/main.scss'
+          'docroot/css/main.css': 'scss/main.scss'
         }
       }
     },
@@ -34,16 +34,16 @@ module.exports = function (grunt) {
         // browsers: ['opera 12', 'ff 15', 'chrome 25']
       },
       single_file: {
-        src: 'css/main.css',
-        dest: 'css/main.css'
+        src: 'docroot/css/main.css',
+        dest: 'docroot/css/main.css'
       }
     },
     browserSync: {
       dev: {
         bsFiles: {
             src : [
-                'css/*.css',
-                '*.html'
+                'docroot/css/*.css',
+                'docroot/*.html'
             ]
         },
         options: {
